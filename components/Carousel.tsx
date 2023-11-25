@@ -19,7 +19,7 @@ export default function Carousel() {
         showThumbs={false}
         autoPlay
         infiniteLoop
-        interval={2000}
+        interval={3000}
         showArrows={false}
         showStatus={false}
       >
