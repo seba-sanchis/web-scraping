@@ -1,15 +1,21 @@
 import Carousel from "@/components/Carousel";
 import Searchbar from "@/components/Searchbar";
 import Image from "next/image";
-import { getAllProducts } from "@/lib/actions";
+import { getAllProducts, getTest } from "@/lib/actions";
 import ProductCard from "@/components/ProductCard";
 
 export default async function Home() {
   const allProducts = await getAllProducts();
 
+  const data = await getTest();
+
   return (
     <>
-      <section className="px-6 md:px-20 py-24">
+      <div>firstName: {data[0].firstName}</div>
+      <div>lastName: {data[0].lastName}</div>
+      <div>region: {data[0].region}</div>
+
+      {/* <section className="px-6 md:px-20 py-24">
         <div className="flex max-xl:flex-col gap-16">
           <div className="flex flex-col justify-center">
             <p className="small-text">
@@ -47,7 +53,7 @@ export default async function Home() {
             <ProductCard key={product._id} product={product} />
           ))}
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
