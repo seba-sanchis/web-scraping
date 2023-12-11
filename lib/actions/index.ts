@@ -123,7 +123,8 @@ export async function addUserEmailToProduct(
 export async function getTest() {
   try {
     const response = await fetch(
-      "https://e-commerce.sebastiansanchis.com/api/user"
+      "https://e-commerce.sebastiansanchis.com/api/user",
+      { cache: "no-store" }
     );
 
     const data = await response.json();
